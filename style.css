@@ -1,22 +1,32 @@
 /* ============================================================
    Hot Topic: Disease Maps — shared stylesheet
+   Colour palette follows Maastricht University's public house
+   style (dark blue primary, orange-red + light blue accents).
+   Source: maastrichtuniversity.nl house style pages.
    Edit the variables below to restyle the whole site at once.
    ============================================================ */
 
 :root {
-  --paper: #f5f3ec;
-  --paper-raised: #eeece2;
-  --ink: #171c1a;
-  --ink-soft: #4b5652;
-  --line: #1b3f45;      /* deep navy-teal — headings, nav, primary lines */
-  --line-soft: #5c7a72; /* muted sage — secondary text, hairlines */
-  --gold: #b8862b;      /* used sparingly: current/active markers, links */
-  --white: #fffdf8;
+  --paper: #ffffff;
+  --paper-raised: #eef2f6;   /* light cool-blue tint for cards */
+  --ink: #10151a;
+  --ink-soft: #4c5762;
 
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --um-blue: #001c3d;        /* UM primary — dark blue */
+  --um-orange: #e84e10;      /* UM accent — orange-red */
+  --um-lightblue: #00a2db;   /* UM accent — light blue */
 
-  --maxw: 760px;
+  --line: var(--um-blue);
+  --line-soft: #7c8794;      /* neutral hairline / secondary text */
+  --accent: var(--um-orange);
+  --accent-2: var(--um-lightblue);
+
+  --white: #ffffff;
+
+  --display: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --maxw: 780px;
 }
 
 * { box-sizing: border-box; }
@@ -33,24 +43,67 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--line); text-decoration-color: var(--line-soft); }
-a:hover { color: var(--gold); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+a { color: var(--um-blue); text-decoration-color: var(--line-soft); }
+a:hover { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 h1, h2, h3 {
-  font-family: var(--serif);
-  color: var(--line);
+  font-family: var(--display);
+  color: var(--um-blue);
   line-height: 1.15;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   margin: 0 0 0.4em;
 }
 
 p { margin: 0 0 1em; max-width: 62ch; }
 
+/* ---------- Partner / organizer logo bar ---------- */
+
+.partner-bar {
+  background: var(--white);
+  border-bottom: 2px solid var(--um-blue);
+}
+
+.partner-bar__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.partner-bar__label {
+  color: var(--line-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+/*
+  Logos are referenced from their source URLs below (see README for why,
+  and how to switch to locally-hosted files under assets/logos/).
+  Adjust --logo-h per logo if one looks over/under-sized next to the others.
+*/
+.partner-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.partner-logo--macsbio,
+.partner-logo--biosb {
+  height: 46px; /* these two read as more square/icon-shaped than the UM wordmark */
+}
+
 /* ---------- Nav ---------- */
 
 .site-nav {
-  border-bottom: 1px solid var(--line-soft);
+  border-bottom: 1px solid #dfe3e8;
   background: var(--paper);
   position: sticky;
   top: 0;
@@ -69,10 +122,10 @@ p { margin: 0 0 1em; max-width: 62ch; }
 }
 
 .site-nav__title {
-  font-family: var(--serif);
-  font-weight: 600;
+  font-family: var(--display);
+  font-weight: 700;
   font-size: 1.05rem;
-  color: var(--line);
+  color: var(--um-blue);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -90,14 +143,14 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .site-nav__links a {
   color: var(--ink-soft);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
 }
 
 .site-nav__links a:hover,
 .site-nav__links a[aria-current="page"] {
-  color: var(--line);
-  border-bottom-color: var(--gold);
+  color: var(--um-blue);
+  border-bottom-color: var(--accent);
 }
 
 /* ---------- Page shell ---------- */
@@ -135,7 +188,7 @@ main {
 .hero__content { position: relative; z-index: 1; max-width: 480px; }
 
 .hero h1 {
-  font-size: clamp(2.3rem, 5vw, 3.1rem);
+  font-size: clamp(2.3rem, 5vw, 3.2rem);
   margin-bottom: 0.25em;
 }
 
@@ -150,8 +203,8 @@ main {
 .facts {
   margin: 40px 0 8px;
   padding: 22px 0;
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
+  border-top: 2px solid var(--um-blue);
+  border-bottom: 1px solid #dfe3e8;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 18px 28px;
@@ -166,9 +219,10 @@ main {
 
 .facts dd {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 600;
   font-size: 1.08rem;
-  color: var(--ink);
+  color: var(--um-blue);
 }
 
 /* ---------- CTA ---------- */
@@ -183,17 +237,17 @@ main {
 
 .btn {
   display: inline-block;
-  background: var(--line);
+  background: var(--accent);
   color: var(--white);
   text-decoration: none;
   font-family: var(--sans);
-  font-weight: 500;
+  font-weight: 600;
   padding: 13px 26px;
   border-radius: 3px;
   transition: background 0.15s ease;
 }
 
-.btn:hover { background: var(--gold); color: var(--white); }
+.btn:hover { background: var(--um-blue); color: var(--white); }
 
 .deadline-note {
   font-size: 0.92rem;
@@ -208,14 +262,14 @@ section + section { margin-top: 56px; }
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  border-bottom: 1px solid var(--line-soft);
+  border-bottom: 1px solid #dfe3e8;
   padding-bottom: 8px;
   margin-bottom: 22px;
   gap: 12px;
 }
 
 .section-head h2 { font-size: 1.5rem; margin: 0; }
-.section-head .see-all { font-size: 0.92rem; white-space: nowrap; }
+.section-head .see-all { font-size: 0.92rem; white-space: nowrap; color: var(--accent-2); }
 
 /* ---------- Speaker list ---------- */
 
@@ -223,7 +277,7 @@ section + section { margin-top: 56px; }
 
 .speaker-list li {
   padding: 16px 0;
-  border-top: 1px solid #ddd9c9;
+  border-top: 1px solid #e4e7eb;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -234,8 +288,9 @@ section + section { margin-top: 56px; }
 .speaker-list li:first-child { border-top: none; }
 
 .speaker-list .name {
-  font-family: var(--serif);
-  font-size: 1.15rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.1rem;
   color: var(--ink);
 }
 
@@ -249,7 +304,7 @@ section + section { margin-top: 56px; }
 
 .speaker-card {
   padding: 24px 0;
-  border-top: 1px solid #ddd9c9;
+  border-top: 1px solid #e4e7eb;
   display: grid;
   grid-template-columns: 96px 1fr;
   gap: 20px;
@@ -274,7 +329,7 @@ section + section { margin-top: 56px; }
 }
 
 .speaker-card h3 { font-size: 1.2rem; margin-bottom: 2px; }
-.speaker-card .affil { color: var(--line-soft); font-size: 0.92rem; margin-bottom: 10px; }
+.speaker-card .affil { color: var(--um-blue); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
 .speaker-card .bio-placeholder {
   font-size: 0.92rem;
   color: var(--ink-soft);
@@ -295,14 +350,15 @@ section + section { margin-top: 56px; }
   grid-template-columns: 78px 1fr;
   gap: 18px;
   padding: 14px 0;
-  border-top: 1px solid #ddd9c9;
+  border-top: 1px solid #e4e7eb;
 }
 
 .timeline li:first-child { border-top: none; }
 
 .timeline .time {
-  font-family: var(--serif);
-  color: var(--line);
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--um-blue);
   font-size: 1.02rem;
   white-space: nowrap;
 }
@@ -313,7 +369,14 @@ section + section { margin-top: 56px; }
 .timeline li.is-break .what,
 .timeline li.is-break .time { color: var(--line-soft); font-style: italic; }
 
-.timeline li.is-highlight { background: var(--paper-raised); margin: 0 -16px; padding: 14px 16px; border-radius: 3px; border-top: none; }
+.timeline li.is-highlight {
+  background: var(--paper-raised);
+  margin: 0 -16px;
+  padding: 14px 16px;
+  border-radius: 3px;
+  border-top: none;
+  border-left: 3px solid var(--accent-2);
+}
 
 /* ---------- Breakout / materials cards ---------- */
 
@@ -325,7 +388,8 @@ section + section { margin-top: 56px; }
 
 .breakout-card {
   background: var(--white);
-  border: 1px solid #ddd9c9;
+  border: 1px solid #dfe3e8;
+  border-top: 3px solid var(--um-blue);
   border-radius: 4px;
   padding: 20px;
 }
@@ -337,7 +401,8 @@ section + section { margin-top: 56px; }
 
 .breakout-card .room-label {
   font-size: 0.85rem;
-  color: var(--gold);
+  font-weight: 600;
+  color: var(--accent);
   margin-bottom: 14px;
 }
 
@@ -372,14 +437,14 @@ section + section { margin-top: 56px; }
 
 .materials-list li {
   padding: 6px 0;
-  border-top: 1px dotted #ddd9c9;
+  border-top: 1px dotted #e4e7eb;
 }
 .materials-list li:first-child { border-top: none; }
 
 /* ---------- Misc ---------- */
 
 .note-box {
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--accent);
   padding: 4px 0 4px 16px;
   color: var(--ink-soft);
   font-size: 0.95rem;
@@ -387,9 +452,11 @@ section + section { margin-top: 56px; }
 }
 
 .contact-block {
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 600;
   font-size: 1.4rem;
   margin-top: 8px;
+  color: var(--um-blue);
 }
 
 footer {
@@ -398,6 +465,6 @@ footer {
   padding: 0 24px 56px;
   color: var(--line-soft);
   font-size: 0.85rem;
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid #dfe3e8;
   padding-top: 20px;
 }

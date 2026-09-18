@@ -20,6 +20,44 @@ Plain HTML/CSS, no build step. Five pages that share one stylesheet:
 
 No Jekyll config, no dependencies — it's just static files, so this is the whole setup.
 
+## Branding
+
+Colors follow Maastricht University's public house style (dark blue `#001C3D`
+primary, orange-red `#E84E10` and light blue `#00A2DB` accents) — set once in
+`style.css` under `:root`. I couldn't find published brand colors specifically
+for MaCSBio or BioSB (MaCSBio is a UM institute and likely just follows the UM
+house style; BioSB's own site doesn't publish a color spec), so the palette
+leans on UM's. Swap the `--um-*` values if MaCSBio or BioSB give you different
+guidance.
+
+Each page has a white **"Organized by"** bar at the top with the UM, MaCSBio
+and BioSB logos (white background because UM's own logo guidelines say it
+should sit on a white or light background).
+
+**The three logos are currently hotlinked to the URLs you gave me** — I don't
+have the ability to download binary image files in this sandbox, so I wired
+the `<img>` tags straight to their source URLs rather than committing copies.
+This will render fine once the site is live, but it's not reliable long-term
+(any of those pages could move, rename, or take the image down, and you'd
+have no control over it). Before this goes live for real, self-host them:
+
+1. Save each image locally (right-click → save image, or download from the
+   same URLs you gave me):
+   - Maastricht University: the Wikimedia Commons URL
+   - MaCSBio: the maastrichtuniversity.nl URL
+   - BioSB: the dtls.nl URL
+2. Create an `assets/logos/` folder in the repo and put the files there
+   (e.g. `um.png`, `macsbio.png`, `biosb.png`).
+3. In every page's `<div class="partner-bar__inner">` block, change each
+   `src="https://..."` to the local path, e.g.
+   `src="assets/logos/um.png"`.
+
+Ideally use the actual official logo files from each institution's brand/
+house-style page rather than a Wikipedia thumbnail or a page screenshot —
+they'll be higher resolution and (for UM in particular) in the exact approved
+file. If the UM logo you use is the full-colour/dark-blue version, it should
+keep working fine on the white bar as-is.
+
 ## Editing content
 
 Everything is plain text in the HTML files — no template language. Places marked

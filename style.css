@@ -512,11 +512,8 @@ section + section { margin-top: 56px; }
 }
 
 .contact-block {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin-top: 8px;
-  color: var(--um-blue);
+  font-size: 0.95rem;
+  margin-top: 4px;
 }
 
 footer {

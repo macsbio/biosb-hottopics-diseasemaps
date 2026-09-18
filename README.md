@@ -70,9 +70,11 @@ Everything is plain text in the HTML files — no template language. Places mark
 `<!-- EDIT ME -->` are the ones you'll touch most:
 
 - **Speaker bios/photos** (`speakers.html`): each speaker is one `.speaker-card` block.
-  Replace the `bio-placeholder` paragraph with real text, and swap the dashed
-  `photo` placeholder `<div>` for `<img src="assets/speakers/name.jpg" alt="Name">`
-  once you have photos (create an `assets/speakers/` folder for the images).
+  Replace the `bio-placeholder` paragraph with real text. Photos are already wired up
+  to `assets/pictures/<name>.png` (marek.png, marie.png, matti.png, luiz.png,
+  martina.png, and — for the organizer cards on the Contact page — dries.png). Use locally-saved files, not
+  hotlinked URLs — most institutional sites block hotlinking (Referer checks) and
+  LinkedIn photo URLs can't be hotlinked at all (they're session-tokenized).
 - **Program** (`program.html`): each row is one `<li>` in the `.timeline` list.
   Add/remove/reorder `<li>` blocks freely. Use `class="is-break"` for
   breaks/registration and `class="is-highlight"` to make an item stand out.

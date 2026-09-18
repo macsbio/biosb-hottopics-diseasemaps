@@ -509,13 +509,19 @@ footer {
   margin-top: 12px;
 }
 
-.funder-logo {
-  height: 26px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.85;
+.funder-logo-slot {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.funder-logo--zonmw {
-  height: 22px;
+.funder-logo {
+  display: block;
+  height: 100%;
+  max-height: 24px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.85;
 }

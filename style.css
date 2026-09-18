@@ -212,10 +212,11 @@ main {
 
 .hero__net {
   position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 340px;
-  max-width: 45vw;
+  top: 0;
+  right: 0;
+  width: 200px;
+  max-width: 32vw;
+  max-height: 200px;
   height: auto;
   object-fit: contain;
   z-index: 0;

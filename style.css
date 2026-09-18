@@ -496,3 +496,8 @@ footer {
   border-top: 1px solid #dfe3e8;
   padding-top: 20px;
 }
+
+.funding-statement {
+  margin: 6px 0 0;
+  max-width: none;
+}

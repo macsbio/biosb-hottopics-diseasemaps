@@ -100,6 +100,16 @@ p { margin: 0 0 1em; max-width: 62ch; }
   height: 46px; /* these two read as more square/icon-shaped than the UM wordmark */
 }
 
+.partner-logo--zonmw {
+  height: 30px;
+}
+
+.partner-bar__divider {
+  width: 1px;
+  height: 28px;
+  background: #dfe3e8;
+}
+
 /* ---------- Nav ---------- */
 
 .site-nav {
@@ -152,6 +162,24 @@ p { margin: 0 0 1em; max-width: 62ch; }
   color: var(--um-blue);
   border-bottom-color: var(--accent);
 }
+
+/* ---------- Nav register button ---------- */
+
+.nav-register {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 7px 16px;
+  border-radius: 3px;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-register:hover { background: var(--um-blue); color: var(--white); }
 
 /* ---------- Page shell ---------- */
 
@@ -228,7 +256,7 @@ main {
 /* ---------- CTA ---------- */
 
 .cta-row {
-  margin: 34px 0 8px;
+  margin: 34px 0 48px;
   display: flex;
   align-items: baseline;
   gap: 20px;

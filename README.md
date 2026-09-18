@@ -30,24 +30,30 @@ house style; BioSB's own site doesn't publish a color spec), so the palette
 leans on UM's. Swap the `--um-*` values if MaCSBio or BioSB give you different
 guidance.
 
-Each page has a white **"Organized by"** bar at the top with the UM, MaCSBio
-and BioSB logos (white background because UM's own logo guidelines say it
-should sit on a white or light background).
+Each page has a white **"Organized by / Funded by"** bar at the top with the
+UM, MaCSBio and BioSB logos (organizers) plus ZonMw (funder). White background
+because UM's own logo guidelines say their logo should sit on a white or
+light background. If BioSB is *also* a funder alongside ZonMw, you may want
+to duplicate its logo under "Funded by" too, or just add a footnote — as-is
+it's only listed once, under "Organized by".
 
-**The three logos are currently hotlinked to the URLs you gave me** — I don't
-have the ability to download binary image files in this sandbox, so I wired
-the `<img>` tags straight to their source URLs rather than committing copies.
+**All four logos are currently hotlinked to their source URLs** — I don't
+have the ability to download binary image files in this sandbox, so the
+`<img>` tags point straight at:
+- UM: a Wikimedia Commons thumbnail
+- MaCSBio: maastrichtuniversity.nl
+- BioSB: dtls.nl
+- ZonMw: zonmw.nl's own official logo SVG
+
 This will render fine once the site is live, but it's not reliable long-term
 (any of those pages could move, rename, or take the image down, and you'd
 have no control over it). Before this goes live for real, self-host them:
 
 1. Save each image locally (right-click → save image, or download from the
-   same URLs you gave me):
-   - Maastricht University: the Wikimedia Commons URL
-   - MaCSBio: the maastrichtuniversity.nl URL
-   - BioSB: the dtls.nl URL
+   URLs in the `<img src="...">` tags — the UM one from Wikimedia Commons,
+   MaCSBio and BioSB from their respective pages, ZonMw from zonmw.nl):
 2. Create an `assets/logos/` folder in the repo and put the files there
-   (e.g. `um.png`, `macsbio.png`, `biosb.png`).
+   (e.g. `um.png`, `macsbio.png`, `biosb.png`, `zonmw.svg`).
 3. In every page's `<div class="partner-bar__inner">` block, change each
    `src="https://..."` to the local path, e.g.
    `src="assets/logos/um.png"`.

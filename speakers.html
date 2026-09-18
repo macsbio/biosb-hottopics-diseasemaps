@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speakers — Hot Topic: Disease Maps</title>
+<title>Speakers — Hot Topic Symposium: Disease Maps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,10 +23,8 @@
 
 <nav class="site-nav">
   <div class="site-nav__inner">
-    <div style="display:flex; align-items:baseline; gap:16px;">
-      <a class="site-nav__title" href="index.html">Hot Topic: Disease Maps</a>
-      <a class="nav-register" href="https://docs.google.com/forms/d/e/1FAIpQLScXQ2jBzmHBItb-4UG9LdJPNkpb5jV7uHObQjwQ--2DeI4p5g/viewform">Register</a>
-    </div>
+    <a class="site-nav__title" href="index.html">Hot Topic Symposium: Disease Maps</a>
+    <div class="site-nav__right">
     <ul class="site-nav__links">
       <li><a href="index.html">Home</a></li>
       <li><a href="speakers.html" aria-current="page">Speakers</a></li>
@@ -34,6 +32,8 @@
       <li><a href="materials.html">Breakout materials</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <a class="nav-register" href="https://docs.google.com/forms/d/e/1FAIpQLScXQ2jBzmHBItb-4UG9LdJPNkpb5jV7uHObQjwQ--2DeI4p5g/viewform">Register</a>
+    </div>
   </div>
 </nav>
 
@@ -46,19 +46,25 @@
     EDIT ME: each block below is one speaker.
     - Replace the photo placeholder div with <img src="assets/speakers/name.jpg" alt="Name">
     - Replace the bio-placeholder <p> with 2–4 sentences of real bio text and a talk title if you have one.
+    - The photo is wrapped in a link to LinkedIn. I couldn't reliably verify which LinkedIn
+      profile belongs to each named speaker (common names, no confirmed match), so each href
+      is a "#" placeholder — swap in the real profile URL once you have it, or remove the
+      <a> wrapper (keep the <div class="speaker-card__photo">...</div> inside) if you'd
+      rather not link at all.
   -->
 
   <div class="speaker-card">
-    <div class="speaker-card__photo">photo</div>
+    <a class="speaker-card__photo" href="#">photo</a>
     <div>
       <h3>Marek Ostaszewski</h3>
-      <p class="affil">Luxembourg Centre for Systems Biomedicine (LCSB), Luxembourg</p>
+      <p class="dept">Luxembourg Centre for Systems Biomedicine (LCSB)</p>
+      <p class="affil">University of Luxembourg, Luxembourg</p>
       <p class="bio-placeholder">Bio and talk title to be added.</p>
     </div>
   </div>
 
   <div class="speaker-card">
-    <div class="speaker-card__photo">photo</div>
+    <a class="speaker-card__photo" href="#">photo</a>
     <div>
       <h3>Marie Corradie</h3>
       <p class="affil">HU University of Applied Sciences Utrecht, Netherlands</p>
@@ -67,16 +73,17 @@
   </div>
 
   <div class="speaker-card">
-    <div class="speaker-card__photo">photo</div>
+    <a class="speaker-card__photo" href="#">photo</a>
     <div>
       <h3>Matti van Welzen</h3>
-      <p class="affil">Department of Systems Biology and Bioinformatics, University of Rostock, Germany</p>
+      <p class="dept">Department of Systems Biology and Bioinformatics</p>
+      <p class="affil">University of Rostock, Germany</p>
       <p class="bio-placeholder">Bio and talk title to be added.</p>
     </div>
   </div>
 
   <div class="speaker-card">
-    <div class="speaker-card__photo">photo</div>
+    <a class="speaker-card__photo" href="#">photo</a>
     <div>
       <h3>Luiz Ladeira</h3>
       <p class="affil">University of Liège, Belgium</p>
@@ -85,10 +92,11 @@
   </div>
 
   <div class="speaker-card">
-    <div class="speaker-card__photo">photo</div>
+    <a class="speaker-card__photo" href="#">photo</a>
     <div>
       <h3>Martina Summer-Kutmon</h3>
-      <p class="affil">Maastricht University (MaCSBio), Netherlands</p>
+      <p class="dept">MaCSBio (Maastricht Centre for Systems Biology and Bioinformatics)</p>
+      <p class="affil">Maastricht University, Netherlands</p>
       <p class="bio-placeholder">Bio and talk title to be added.</p>
     </div>
   </div>
@@ -96,7 +104,7 @@
 </main>
 
 <footer>
-  Hot Topic: Disease Maps — a BioSB HotTopics meeting.
+  Hot Topic Symposium: Disease Maps — a BioSB Hot Topic Symposium.
   <p class="funding-statement">This meeting is funded by BioSB and ZonMw.</p>
   <div class="funder-logos">
     <span class="funder-logo-slot"><img class="funder-logo" src="https://www.dtls.nl/wp-content/uploads/2026/02/BioSB_logo_short_1000x795-300x239.png" alt="BioSB"></span>

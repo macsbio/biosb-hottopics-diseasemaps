@@ -140,6 +140,13 @@ p { margin: 0 0 1em; max-width: 62ch; }
   white-space: nowrap;
 }
 
+.site-nav__right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
 .site-nav__links {
   display: flex;
   gap: 22px;
@@ -354,9 +361,11 @@ section + section { margin-top: 56px; }
   color: var(--line-soft);
   text-align: center;
   padding: 6px;
+  text-decoration: none;
 }
 
 .speaker-card h3 { font-size: 1.2rem; margin-bottom: 2px; }
+.speaker-card .dept { color: var(--ink); font-weight: 600; font-size: 0.92rem; margin-bottom: 1px; }
 .speaker-card .affil { color: var(--um-blue); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
 .speaker-card .bio-placeholder {
   font-size: 0.92rem;
@@ -468,6 +477,15 @@ section + section { margin-top: 56px; }
   border-top: 1px dotted #e4e7eb;
 }
 .materials-list li:first-child { border-top: none; }
+
+.materials-note {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dotted #e4e7eb;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-style: italic;
+}
 
 /* ---------- Misc ---------- */
 
